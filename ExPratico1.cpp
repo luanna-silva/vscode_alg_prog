@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h> // Necessário para usar 'true' em C puro (se o compilador for C++)
+#include <stdbool.h> 
 
 #define MAX 5
 
