@@ -47,3 +47,36 @@ Produto* buscar_por_codigo(Produto* produtos, int tam, int codigo)
 
     return nullptr;
 }
+
+
+int main()
+{
+    int tam = 3;
+
+    Produto* produtos = new Produto[tam];
+
+    produtos[0] = {1, "Camiseta", 50.00, 10};
+    produtos[1] = {2, "Calca", 75.00, 5};
+    produtos[2] = {3, "Sueter", 60.00, 4};
+
+    int indice = indice_mais_caro(produtos, tam);
+
+    cout << "Produto mais caro: " << produtos[indice].nome << endl; // endl pula uma linha na tela e limpa o armazenamento temporário de dados
+
+    Produto* encontrado = buscar_por_codigo(produtos, tam, 2);
+
+    if(encontrado != nullptr)
+    {
+        cout << "Produto encontrado: " << encontrado->nome << endl;
+        cout << "Preco: " << encontrado->preco << endl;
+    }
+    else
+    {
+        cout << "Produto nao encontrado." << endl;
+    }
+
+    delete[] produtos;
+
+    return 0;
+}
+
